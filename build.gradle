@@ -1,0 +1,15 @@
+plugins {
+    id "com.github.lkishalmi.gatling" version "0.3.0"
+}
+
+apply plugin: 'scala'
+
+repositories {
+    jcenter()
+}
+
+tasks.withType(ScalaCompile) {
+    configure(scalaCompileOptions.forkOptions) {
+        memoryMaximumSize = '1g'
+    }
+}
